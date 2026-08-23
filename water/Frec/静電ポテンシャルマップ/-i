@@ -1,0 +1,4 @@
+Fatal Error (ORCA_PLOT): usage orca_plot gbw-file plot-inputfile
+                         or    orca_plot gbw-file -i (for interactive)
+                         or    orca_plot gbw-file -i (for interactive) -m (for memory specification in MB)
+                         or    orca_plot density-file (for a listing of all available densities)
