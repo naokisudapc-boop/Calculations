@@ -1,0 +1,515 @@
+
+                                 *****************
+                                 * O   R   C   A *
+                                 *****************
+
+                                            #,                                       
+                                            ###                                      
+                                            ####                                     
+                                            #####                                    
+                                            ######                                   
+                                           ########,                                 
+                                     ,,################,,,,,                         
+                               ,,#################################,,                 
+                          ,,##########################################,,             
+                       ,#########################################, ''#####,          
+                    ,#############################################,,   '####,        
+                  ,##################################################,,,,####,       
+                ,###########''''           ''''###############################       
+              ,#####''   ,,,,##########,,,,          '''####'''          '####       
+            ,##' ,,,,###########################,,,                        '##       
+           ' ,,###''''                  '''############,,,                           
+         ,,##''                                '''############,,,,        ,,,,,,###''
+      ,#''                                            '''#######################'''  
+     '                                                          ''''####''''         
+             ,#######,   #######,   ,#######,      ##                                
+            ,#'     '#,  ##    ##  ,#'     '#,    #''#        ,####,    ,#,          
+            ##       ##  ##   ,#'  ##            #'  '#       #'       ,# #          
+            ##       ##  #######   ##           ,######,      #####,      #          
+            '#,     ,#'  ##    ##  '#,     ,#' ,#      #,     #,   #      #          
+             '#######'   ##     ##  '#######'  #'      '#     '####' #    #          
+
+
+
+                #########################################################
+                #                        -***-                          #
+                #          Department of theory and spectroscopy        #
+                #                                                       #
+                #                      Frank Neese                      #
+                #                                                       #
+                #     Directorship, Architecture, Infrastructure        #
+                #                    SHARK, DRIVERS                     #
+                #        Core code/Algorithms in most modules           #
+                #                                                       #
+                #        Max Planck Institute fuer Kohlenforschung      #
+                #                Kaiser Wilhelm Platz 1                 #
+                #                 D-45470 Muelheim/Ruhr                 #
+                #                      Germany                          #
+                #                                                       #
+                #                  All rights reserved                  #
+                #                        -***-                          #
+                #########################################################
+
+
+                         Program Version 6.1.1  -  RELEASE   -
+
+
+ With contributions from (in alphabetic order):
+[Max-Planck-Institut fuer Kohlenforschung]                               
+  Daniel Aravena         : Magnetic Suceptibility                        
+  Michael Atanasov       : Ab Initio Ligand Field Theory (pilot matlab implementation)
+  Alexander A. Auer      : GIAO ZORA, VPT2 properties, NMR spectrum      
+  Ute Becker             : All parallelization in ORCA, NUMFREQ, NUMCALC 
+  Giovanni Bistoni       : ED, misc. LED, open-shell LED, HFLD           
+  Dmytro Bykov           : pre 5.0 version of the SCF Hessian            
+  Marcos Casanova-Pﾃ｡ez   : Triplet and SCS-CIS(D). UHF-(DLPNO)-IP/EA/STEOM-CCSD. UHF-CVS-IP/STEOM-CCSD   
+  Vijay G. Chilkuri      : MRCI spin determinant printing, contributions to CSF-ICE 
+  Pauline Colinet        : FMM embedding                                 
+  Dipayan Datta          : RHF DLPNO-CCSD density                        
+  Achintya Kumar Dutta   : EOM-CC, STEOM-CC                              
+  Nicolas Foglia         : Exact transition moments, OPA infrastructure, MCD improvements    
+  Dmitry Ganyushin       : Spin-Orbit,Spin-Spin,Magnetic field MRCI      
+  Miquel Garcia-Rates    : C-PCM and meta-GGA Hessian, CCSD/C-PCM, Gaussian charge scheme 
+  Tiago L. C. Gouveia    : GS-ROHF, GS-ROCIS                             
+  Yang Guo               : DLPNO-NEVPT2, F12-NEVPT2, CIM, IAO-localization        
+  Andreas Hansen         : Spin unrestricted coupled pair/coupled cluster methods 
+  Ingolf Harden          : AUTO-CI MPn and infrastructure                
+  Benjamin Helmich-Paris : MC-RPA, TRAH-(SCF,CASSCF), AVAS, COSX integrals, SCF dyn. polar., MC-PDFT, srDFT 
+  Lee Huntington         : MR-EOM, pCC                                   
+  Robert Izsak           : Overlap fitted RIJCOSX, COSX-SCS-MP3, EOM     
+  Riya Kayal             : Wick's Theorem for AUTO-CI, AUTO-CI UHF-CCSDT 
+  Emily Kempfer          : AUTO-CI RHF CISDT and CCSDT, approximate NEVPT4
+  Christian Kollmar      : KDIIS, OOCD, Brueckner-CCSD(T), CCSD density, CASPT2, CASPT2-K, improved NEVPT2 
+  Axel Koslowski         : Symmetry handling                             
+  Simone Kossmann        : meta-GGA functionals, TD-DFT gradient, OOMP2, (MP2 Hessian; deprecated post 5.0) 
+  Lucas Lang             : DCDCAS, Hyperfine gauge corrections, ICE-SOC+SSC
+  Marvin Lechner         : AUTO-CI (C++ implementation), FIC-MRCC        
+  Spencer Leger          : CASSCF response                               
+  Dagmar Lenk            : GEPOL surface, SMD, ORCA-2-JSON               
+  Dimitrios Liakos       : Extrapolation schemes; Compound Job, Property file
+  Dimitrios Manganas     : Further ROCIS development; embedding schemes. LFT, Crystal Embedding 
+  Dimitrios Pantazis     : SARC Basis sets                               
+  Anastasios Papadopoulos: AUTO-CI, single reference methods and gradients 
+  Taras Petrenko         : pre 6.0 DFT Hessian and TD-DFT gradient,  ECA, NRVS 
+  Petra Pikulova         : Analytic Raman intensities                    
+  Peter Pinski           : DLPNO-MP2, DLPNO-MP2 Gradient                 
+  Shashank Vittal Rao    : ES-AILFT, MagRelax                            
+  Christoph Reimann      : Effective Core Potentials                     
+  Marius Retegan         : Local ZFS, SOC                                
+  Christoph Riplinger    : Optimizer, TS searches, QM/MM, DLPNO-CCSD(T), (RO)-DLPNO pert. Triples 
+  Michael Roemelt        : Original ROCIS implementation, recursive CI coupling coefficients
+  Masaaki Saitow         : Open-shell DLPNO-CCSD energy and density      
+  Barbara Sandhoefer     : DKH picture change effects                    
+  Yorick L. A. Schmerwitz: GMF and freeze-and-release deltaSCF, NEB S-IDPP initial path                    
+  Kantharuban Sivalingam : CASSCF convergence/infrastructure, NEVPT2, NEVPT3, NEVPT4(SD), FIC-MRCI and CEPA variants
+  Bernardo de Souza      : ESD, SOC TD-DFT                               
+  Georgi L. Stoychev     : AutoAux, RI-MP2 NMR, DLPNO-MP2 response, X2C  
+  Van Anh Tran           : RI-MP2 g-tensors                              
+  Willem Van den Heuvel  : Paramagnetic NMR                              
+  Zikuan Wang            : NOTCH, Electric field optimization            
+  Frank Wennmohs         : Technical directorship and infrastructure     
+  Hang Xu                : AUTO-CI-Response properties                   
+                                                                         
+[FACCTs GmbH]                                                            
+  Markus Bursch, Nicolas Foglia, Miquel Garcia-Rates, Ingolf Harden, Hagen Neugebauer, Anastasios Papadopoulos, 
+  Christoph Riplinger, Bernardo de Souza, Georgi L. Stoychev                                                    
+                                                                 
+  APM, various basis sets, CI-OPT, improved COSX, DLPNO-Multilevel,           
+  DOCKER, DRACO, updates on ESD, Fragmentator, GOAT, IRC, LR-CPCM, L-BFGS, MBIS, meta-GGA TD-DFT gradient, ML-optimized integration grids, 
+  MM, NACMEs, nearIR, NEB, NEB-TS, NL-DFT gradient (VV10), 2- and 3-layer-ONIOM, interface openCOSMO-RS, QMMM,   
+  Crystal-QMMM, RESP, rigid body optimization, SF, symmetry and pop. for TD-DFT, various functionals, SOLVATOR                                   
+                                                                         
+[Other institutions]                                                     
+  V. Asgeirsson          : NEB                                           
+  Christoph Bannwarth    : sTDA-DFT, sTD-DFT, PBEh-3c, B97-3c, D3        
+  Giovanni Bistoni       : ETS/NOCV, ADLD/ADEX, COVALED                  
+  Martin Brehm           : Molecular dynamics                            
+  Ronald Cardenas        : ETS/NOCV                                      
+  Martina Colucci        : COVALED                                       
+  Sebastian Ehlert       : rSCAN, r2SCAN, r2SCAN-3c, D4, dhf basis sets  
+  Marvin Friede          : D4 for Fr, Ra, Ac-Lr                          
+  Lars Goerigk           : TD-DFT with DH, B97 family of functionals     
+  Stefan Grimme          : VdW corrections, initial TS optimization, DFT functionals, gCP, sTDA/sTD-DF 
+  Waldemar Hujo          : DFT-NL                                        
+  H. Jonsson             : NEB                                           
+  Holger Kruse           : gCP                                           
+  Marcel Mueller         : wB97X-3c, vDZP basis set                      
+  Hagen Neugebauer       : wr2SCAN, Native XTB                           
+  Gianluca Regni         : ADLD/ADEX                                     
+  Tobias Risthaus        : pre 6.0 range-separated hybrid DFT and stability analysis
+  Lukas Wittmann         : regularized MP2, r2SCAN double-hybrids, wr2SCAN        
+                                                                         
+We gratefully acknowledge several colleagues who have allowed us to      
+interface, adapt or use parts of their codes:                            
+  Ed Valeev, F. Pavosevic, A. Kumar             : LibInt (2-el integral package), F12 methods 
+  Garnet Chan, S. Sharma, J. Yang, R. Olivares  : DMRG                   
+  Ulf Ekstrom                                   : XCFun DFT Library      
+  Mihaly Kallay                                 : mrcc  (arbitrary order and MRCC methods)
+  Frank Weinhold                                : gennbo (NPA and NBO analysis)           
+  Simon Mueller                                 : openCOSMO-RS                            
+  Christopher J. Cramer and Donald G. Truhlar   : smd solvation model                     
+  S Lehtola, MJT Oliveira, MAL Marques          : LibXC Library                           
+  Liviu Ungur et al                             : ANISO software                          
+
+
+ Your calculation uses the libint2 library for the computation of 2-el integrals
+ For citations please refer to: http://libint.valeyev.net
+
+ Your ORCA version has been built with support for libXC version: 7.0.0
+ For citations please refer to: https://libxc.gitlab.io
+
+ This ORCA versions uses:
+   CBLAS   interface :  Fast vector & matrix operations
+   LAPACKE interface :  Fast linear algebra routines
+   Shared memory     :  Shared parallel matrices
+
+
+  ***********************************
+  * Starting time: Tue Aug 25 20:17:29 2026
+  * Host name:     DESKTOP-2KDTO5M
+  * Process ID:    13392
+  * Working dir.:  C:\Users\naoki\Downloads\デスクトップ\data\Molecules\Calculations\Apixaban\DMSO\COSMO-RS
+  ***********************************
+
+NOTE: MaxCore=2000 MB was set to SCF,MP2,MDCI,CIPSI,MRCI,RASCI and CIS
+      => If you want to overwrite this, your respective input block should be placed after the MaxCore statement
+================================================================================
+
+----- Orbital basis set information -----
+Your calculation utilizes the basis: def2-SVP
+   F. Weigend and R. Ahlrichs, Phys. Chem. Chem. Phys. 7, 3297 (2005).
+
+================================================================================
+                                        WARNINGS
+                       Please study these warnings very carefully!
+================================================================================
+
+
+================================================================================
+                                       INPUT FILE
+================================================================================
+NAME = Apixaban_COSMORS_DMSO_Opt_KeepDens.inp
+|  1> # Apixaban: ORCA/openCOSMO-RS calculation
+|  2> # Solute: Apixaban, neutral singlet
+|  3> # COSMO-RS solvent: DMSO
+|  4> #
+|  5> # IMPORTANT:
+|  6> # ORCA/openCOSMO-RS is a special workflow. The ORCA 6.1 manual specifies
+|  7> # BP86/def2-TZVPD for the COSMO-RS parametrization. Geometry optimization
+|  8> # of the solute/conductor is requested through %cosmors dftfunc.
+|  9> #
+| 10> # The explicit Opt/Freq keywords are NOT added to the COSMORS job itself.
+| 11> # COSMO-RS internally performs conductor/gas single-point calculations and
+| 12> # then calls openCOSMO-RS. Freq/thermochemistry should be handled as a
+| 13> # separate gas-phase calculation when needed for G_solv/Gibbs free energy.
+| 14> 
+| 15> ! COSMORS(DMSO) KeepDens
+| 16> 
+| 17> %cosmors
+| 18>   dftfunc "BP86 tightopt"
+| 19>   dftbas  "def2-TZVPD"
+| 20>   temp 298.15
+| 21> end
+| 22> 
+| 23> %pal
+| 24>   nprocs 4
+| 25> end
+| 26> 
+| 27> %maxcore 2000
+| 28> 
+| 29> * xyz 0 1
+| 30> C  23.763855 -17.629723 -0.033246
+| 31> C  24.212361 -18.480799  1.149444
+| 32> C  25.514478 -19.249394  0.976344
+| 33> N  26.389670 -18.823694 -0.008450
+| 34> C  26.012066 -17.853157 -1.054375
+| 35> C  24.964850 -16.865439 -0.572305
+| 36> C  27.650985 -19.470009 -0.165128
+| 37> C  28.478078 -19.697659  0.938888
+| 38> C  29.716351 -20.292717  0.777195
+| 39> C  30.163986 -20.666057 -0.492992
+| 40> C  29.347040 -20.428520 -1.596100
+| 41> C  28.096429 -19.842825 -1.431825
+| 42> N  31.424052 -21.308998 -0.652795
+| 43> C  31.530940 -22.372194 -1.676775
+| 44> C  32.530016 -23.455863 -1.281705
+| 45> C  33.795389 -22.785770 -0.879340
+| 46> C  33.775655 -21.512857 -0.340876
+| 47> C  32.557914 -20.722939 -0.101772
+| 48> O  25.780696 -20.170407  1.734370
+| 49> O  32.533095 -19.680470  0.540358
+| 50> C  35.151924 -23.140900 -0.915120
+| 51> N  35.919128 -22.147396 -0.435699
+| 52> N  35.081038 -21.167453 -0.079047
+| 53> C  35.630213 -19.952939  0.435246
+| 54> C  35.735121 -24.412602 -1.398595
+| 55> N  37.091924 -24.482143 -1.346023
+| 56> O  35.022728 -25.317655 -1.821758
+| 57> C  35.200067 -19.435921  1.655850
+| 58> C  35.779766 -18.283247  2.149397
+| 59> C  36.798514 -17.642402  1.435078
+| 60> C  37.237546 -18.170910  0.219361
+| 61> C  36.646158 -19.329474 -0.274854
+| 62> O  37.298630 -16.515072  2.010912
+| 63> C  38.342809 -15.829917  1.326470
+| 64> H  23.355427 -18.270203 -0.826972
+| 65> H  22.961101 -16.949289  0.271816
+| 66> H  24.371850 -17.842550  2.030097
+| 67> H  23.460688 -19.219387  1.441862
+| 68> H  26.926696 -17.333555 -1.362039
+| 69> H  25.621436 -18.381635 -1.939330
+| 70> H  25.388854 -16.226154  0.213722
+| 71> H  24.686415 -16.216279 -1.410559
+| 72> H  28.139206 -19.419799  1.928999
+| 73> H  30.348554 -20.464950  1.639973
+| 74> H  29.679552 -20.694212 -2.594622
+| 75> H  27.472081 -19.682897 -2.304774
+| 76> H  30.533316 -22.802053 -1.800867
+| 77> H  31.836836 -21.933639 -2.640184
+| 78> H  32.138710 -24.055505 -0.448262
+| 79> H  32.698138 -24.140304 -2.117229
+| 80> H  37.624162 -23.739202 -0.922722
+| 81> H  37.537203 -25.347440 -1.600608
+| 82> H  34.410277 -19.930622  2.207218
+| 83> H  35.460395 -17.860026  3.095908
+| 84> H  38.025028 -17.696010 -0.353192
+| 85> H  36.976438 -19.752502 -1.217954
+| 86> H  38.010214 -15.476074  0.341407
+| 87> H  38.595678 -14.972319  1.951801
+| 88> H  39.229014 -16.467755  1.208024
+| 89> *
+| 90> 
+| 91>                          ****END OF INPUT****
+================================================================================
+
+------------------------------------------------------------------------------
+                          OPENCOSMO-RS CALCULATION
+------------------------------------------------------------------------------
+
+----------------------
+GENERAL INFORMATION
+----------------------
+Calculation method                          ... DFT
+Functional                                  ... BP86 tightopt
+Basis set                                   ... def2-TZVPD
+
+----------------------
+SOLUTE INFORMATION
+----------------------
+Number of atoms                             ...     59
+Total charge                                ...      0
+Multiplicity                                ...      1
+
+CARTESIAN COORDINATES (ANGSTROEM)
+  C     23.763855  -17.629723   -0.033246
+  C     24.212361  -18.480799    1.149444
+  C     25.514478  -19.249394    0.976344
+  N     26.389670  -18.823694   -0.008450
+  C     26.012066  -17.853157   -1.054375
+  C     24.964850  -16.865439   -0.572305
+  C     27.650985  -19.470009   -0.165128
+  C     28.478078  -19.697659    0.938888
+  C     29.716351  -20.292717    0.777195
+  C     30.163986  -20.666057   -0.492992
+  C     29.347040  -20.428520   -1.596100
+  C     28.096429  -19.842825   -1.431825
+  N     31.424052  -21.308998   -0.652795
+  C     31.530940  -22.372194   -1.676775
+  C     32.530016  -23.455863   -1.281705
+  C     33.795389  -22.785770   -0.879340
+  C     33.775655  -21.512857   -0.340876
+  C     32.557914  -20.722939   -0.101772
+  O     25.780696  -20.170407    1.734370
+  O     32.533095  -19.680470    0.540358
+  C     35.151924  -23.140900   -0.915120
+  N     35.919128  -22.147396   -0.435699
+  N     35.081038  -21.167453   -0.079047
+  C     35.630213  -19.952939    0.435246
+  C     35.735121  -24.412602   -1.398595
+  N     37.091924  -24.482143   -1.346023
+  O     35.022728  -25.317655   -1.821758
+  C     35.200067  -19.435921    1.655850
+  C     35.779766  -18.283247    2.149397
+  C     36.798514  -17.642402    1.435078
+  C     37.237546  -18.170910    0.219361
+  C     36.646158  -19.329474   -0.274854
+  O     37.298630  -16.515072    2.010912
+  C     38.342809  -15.829917    1.326470
+  H     23.355427  -18.270203   -0.826972
+  H     22.961101  -16.949289    0.271816
+  H     24.371850  -17.842550    2.030097
+  H     23.460688  -19.219387    1.441862
+  H     26.926696  -17.333555   -1.362039
+  H     25.621436  -18.381635   -1.939330
+  H     25.388854  -16.226154    0.213722
+  H     24.686415  -16.216279   -1.410559
+  H     28.139206  -19.419799    1.928999
+  H     30.348554  -20.464950    1.639973
+  H     29.679552  -20.694212   -2.594622
+  H     27.472081  -19.682897   -2.304774
+  H     30.533316  -22.802053   -1.800867
+  H     31.836836  -21.933639   -2.640184
+  H     32.138710  -24.055505   -0.448262
+  H     32.698138  -24.140304   -2.117229
+  H     37.624162  -23.739202   -0.922722
+  H     37.537203  -25.347440   -1.600608
+  H     34.410277  -19.930622    2.207218
+  H     35.460395  -17.860026    3.095908
+  H     38.025028  -17.696010   -0.353192
+  H     36.976438  -19.752502   -1.217954
+  H     38.010214  -15.476074    0.341407
+  H     38.595678  -14.972319    1.951801
+  H     39.229014  -16.467755    1.208024
+
+----------------------
+SOLVENT INFORMATION
+----------------------
+Solvent name                                ... DIMETHYLSULFOXIDE
+Number of atoms                             ...     10
+Total charge                                ...      0
+Multiplicity                                ...      1
+
+CARTESIAN COORDINATES (ANGSTROEM)
+  C     -1.360647   -0.017362   -0.233423
+  S     -0.012304    0.751095    0.709186
+  O     -0.020046    0.106253    2.089176
+  C      1.364858    0.003988   -0.208544
+  H     -2.297833    0.294188    0.243837
+  H     -1.322450    0.355003   -1.265838
+  H     -1.247059   -1.109059   -0.200532
+  H      1.267346   -1.089359   -0.178001
+  H      1.339623    0.375982   -1.241476
+  H      2.288511    0.329271    0.285614
+
+----------------------------------------------
+Single Point Calculation (solute / gas-phase)
+----------------------------------------------
+Output single point calculation redirected to >Apixaban_COSMORS_DMSO_Opt_KeepDens.solute_vac.lastout
+
+FINAL SINGLE POINT ENERGY (Solute-gas-phase)    -1543.016521804233
+
+----------------------------------------------
+Single Point Calculation (solute / CPCM)
+----------------------------------------------
+Output single point calculation redirected to >Apixaban_COSMORS_DMSO_Opt_KeepDens.solute_cpcm.lastout
+
+FINAL SINGLE POINT ENERGY (Solute-CPCM)    -1543.061086205481
+
+----------------------------------------------
+Single Point Calculation (solvent / CPCM)
+----------------------------------------------
+Output single point calculation redirected to >Apixaban_COSMORS_DMSO_Opt_KeepDens.solvent_cpcm.lastout
+
+FINAL SINGLE POINT ENERGY (Solvent-CPCM)     -553.356219335001
+
+----------------------
+SOLVATION DATA
+----------------------
+Reference temperature              :                 298.15 K
+Free energy of solvation (dGsolv)  :       -0.053565742430 Eh            -33.613018 kcal/mol
+
+Note: In order to calculate the free energy of the solvated solute (Gsolv), one should add
+      the computed dGsolv to the "Final Gibbs free energy" (Gvac = H-T*S) of the solute in gas-phase.
+      That is: Gsolv = Gvac + dGsolv. Here, the Gvac has been calculated previously after a frequency
+      calculation of the solute at a certain level of theory and printed in the "THERMOCHEMISTRY" block.
+
+----------------------
+openCOSMO-RS TIMINGS
+----------------------
+Time single point calculation (solute  / gas-phase) ...      9171.16 (sec)
+Time single point calculation (solute  / CPCM)      ...     21201.70 (sec)
+Time single point calculation (solvent / CPCM)      ...        71.28 (sec)
+Time execution openCOSMO-RS binaries                ...         0.67 (sec)
+Total time openCOSMO-RS                             ...     30444.93 (sec)
+
+
+--------------------------------
+SUGGESTED CITATIONS FOR THIS RUN
+--------------------------------
+
+Below you find a list of papers that are relevant to this ORCA run
+We neither can nor want to force you to cite these papers, but we appreciate if you do
+You receive ORCA, which is the product of decades of hard work by many enthusiastic individuals, for free
+The only thing we kindly ask in return is that you cite our papers,
+We deeply appreciate it, if you show your appreciation for ORCA by not just citing the generic ORCA reference.
+
+Please note that relegating all ORCA citations to the supporting information does *not* help us.
+SI sections are not indexed - citations you put there will not count into any citation statistics
+But we need these citations in order to attract the funding resources that allow us to do what we are doing
+
+Therefore, if you are a happy ORCA user, please consider citing a few of the papers listed below in the main body of your paper
+
+In addition to the list printed below, the program has created the file Apixaban_COSMORS_DMSO_Opt_KeepDens.bibtex that contains the list in bibtex format
+You can import this file easily into all common literature databanks and citation aid programs
+
+It goes without saying that in many instances, there are alternative algorithms to achieve similar
+results as the ones you have gotten from ORCA. It is, of course, also the case that in some instances
+ORCA just re-implements algorithms worked out by others. We are fully aware of that and we are also
+fully appreciative of our colleagues work. Hence this citation list should not be read as indicating
+that the listed papers, which are focused on our own work, are the only ones worth citing. It simply
+meant to make it easier for users to cite ORCA specific papers. It is not a substitute for doing your
+own literature research and citing the relevant literature in a scientifically appropriate manner.
+
+List of essential papers. We consider these as the minimum necessary citations
+
+  1. Neese, F.
+     Software update: the ORCA program system, version 6.0
+     WIRES Comput. Molec. Sci. 2025 15(1), e70019
+     doi.org/10.1002/wcms.70019
+
+List of papers to cite with high priority. The work reported in these papers was absolutely
+necessary for this run to complete.
+Our perspective: the developers of density functionals and basis sets usually get cited in chemistry papers
+Good! But without the algorithms to do something with them, the functionals or basis sets would not do anything.
+Hence, in our opinion, the algorithm design and method developments papers are equally worthy of getting cited
+
+  1. Garcia-Rates, M.; Neese, F.
+     Effect of the Solute Cavity on the Solvation Energy and its Derivatives within the Framework of the Gaussian Charge Scheme
+     J. Comput. Chem. 2020 41 , 922-939
+     doi.org/10.1002/jcc.26139
+  2. Gerlach, T.; Mﾃｼller, S.; Gonzﾃ｡lez de Castilla, A.; Smirnova, I.
+     An Open Source COSMO-RS Implementation and Parameterization Supporting the Efficient Implementation of Multiple Segment Descriptors
+     Fluid Phase Equilibria 2022 560 , 113472
+     doi.org/10.1016/j.fluid.2022.113472
+  3. Neese, F.
+     The SHARK Integral Generation and Digestion System
+     J. Comp. Chem. 2022 44(3), 381
+     doi.org/10.1002/jcc.26942
+  4. Mﾃｼller, S.; Nevolianis, T.; Garcia-Rates, M.; Riplinger, C.; Leonhard, K.; Smirnova, I.
+     Predicting solvation free energies for neutral molecules in any solvent with openCOSMO-RS
+     Fluid Phase Equilibria 2025 589 , 114250
+     doi.org/10.1016/j.fluid.2024.114250
+
+List of suggested additional citations. These are papers that are important in the 'surrounding' of 
+of this run, or papers that preceded the highly important papers. If you like your results we are grateful for a citation.
+
+  1. Neese, F.
+     The ORCA program system
+     WIRES Comput. Molec. Sci. 2012 2(1), 73-78
+     doi.org/10.1002/wcms.81
+  2. Neese, F.
+     Software update: the ORCA program system, version 4.0
+     WIRES Comput. Molec. Sci. 2018 8(1), 1-6
+     doi.org/10.1002/wcms.1327
+  3. Neese, F.; Wennmohs, F.; Becker, U.; Riplinger, C.
+     The ORCA quantum chemistry program package
+     J. Chem. Phys. 2020 152(22), 224108
+     doi.org/10.1063/5.0004608
+  4. Neese, F.
+     Software update: The ORCA program system窶之ersion 5.0
+     WIRES Comput. Molec. Sci. 2022 12(1), e1606
+     doi.org/10.1002/wcms.1606
+
+List of optional additional citations
+
+  1. Neese, F.
+     Approximate second-order SCF convergence for spin unrestricted wavefunctions
+     Chem. Phys. Lett. 2000 325(1-3), 93-98
+     doi.org/10.1016/s0009-2614(00)00662-x
+
+Timings for individual modules:
+
+Sum of individual times          ...    30444.929 sec (= 507.415 min)
+OPENCOSMO-RS module              ...    30444.929 sec (= 507.415 min) 100.0 %
+                             ****ORCA TERMINATED NORMALLY****
+TOTAL RUN TIME: 0 days 8 hours 27 minutes 25 seconds 262 msec
