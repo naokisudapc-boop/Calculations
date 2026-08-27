@@ -1,0 +1,27 @@
+# DMSO molecule in DMSO solvent
+# Purpose: SMD(DMSO) Opt + Freq + KeepDens
+# Charge = 0, multiplicity = 1
+#
+# NOTE:
+# The geometry below is only an initial DMSO monomer geometry.
+# SMD treats the surrounding DMSO as a continuum solvent.
+
+! r2SCAN-3c TightSCF Opt Freq KeepDens SMD(DMSO)
+
+%pal
+  nprocs 4
+end
+
+%maxcore 2000
+
+* xyz 0 1
+C      19.567290    -20.532883      1.050804
+S      20.416286    -20.956333      2.582508
+C      20.102498    -19.548132      3.661734
+O      21.889646    -20.811686      2.225931
+H      19.778871    -21.307176      0.284923
+H      18.473982    -20.488616      1.234200
+H      19.919406    -19.546510      0.683504
+H      20.427984    -18.610742      3.164555
+H      19.017508    -19.488567      3.885704
+*
