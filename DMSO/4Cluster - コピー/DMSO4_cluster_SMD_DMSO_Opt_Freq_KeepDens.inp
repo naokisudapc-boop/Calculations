@@ -1,0 +1,62 @@
+# DMSO 4-molecule cluster
+# Geometry: DMSO molecules extracted from the final optimized
+# Apixaban + 4 DMSO + SMD(DMSO) structure.
+#
+# Apixaban has been removed. The relative positions/orientations of the
+# four optimized DMSO molecules are retained as the starting cluster.
+#
+# SMD(DMSO) is included so the four-molecule cluster is optimized and
+# frequency-analyzed in the same continuum-solvent environment as the
+# Apixaban + 4 DMSO calculation.
+# It is intended to probe DMSO-DMSO interactions under DMSO solvation.
+
+! r2SCAN-3c TightSCF Opt Freq KeepDens SMD(DMSO)
+
+%pal
+  nprocs 4
+end
+
+%maxcore 2000
+
+* xyz 0 1
+C         30.90984      -24.16245       -0.67792
+S         32.61157      -23.65331       -0.25808
+C         32.09070      -22.33638        0.89337
+O         32.70843      -22.68937       -1.45202
+H         30.94453      -24.91793       -1.48891
+H         30.43554      -24.62780        0.21077
+H         30.29195      -23.30176       -1.01248
+H         31.37791      -21.62946        0.41729
+H         31.61009      -22.79452        1.78249
+H         32.98421      -21.77371        1.23234
+C         36.88819      -27.26625       -0.13473
+S         36.01490      -25.67098       -0.28084
+C         36.61823      -25.32850       -1.96972
+O         37.16067      -24.88980        0.38344
+H         36.81588      -27.62570        0.91255
+H         36.40094      -28.01294       -0.79547
+H         37.96011      -27.17602       -0.41327
+H         37.72768      -25.28527       -2.01211
+H         36.26223      -26.12264       -2.65807
+H         36.20305      -24.35929       -2.31378
+C         35.23601      -20.06668       -0.50740
+S         35.96489      -21.73194       -0.66729
+C         37.68052      -21.17788       -0.38746
+O         35.74315      -22.06568        0.81714
+H         35.52983      -19.57668        0.44548
+H         35.56807      -19.43671       -1.35846
+H         34.13028      -20.14973       -0.54549
+H         38.33833      -22.06724       -0.29971
+H         38.01897      -20.57654       -1.25646
+H         37.77179      -20.56766        0.53659
+C         32.77962      -26.32653       -5.56703
+S         33.57060      -25.37862       -4.22259
+C         33.15239      -26.58868       -2.92173
+O         32.31166      -24.53503       -3.96388
+H         32.80595      -25.72498       -6.49898
+H         33.34700      -27.26450       -5.73972
+H         31.72369      -26.57824       -5.32945
+H         32.07283      -26.85043       -2.93170
+H         33.75314      -27.50979       -3.07004
+H         33.40984      -26.16159       -1.93155
+*
