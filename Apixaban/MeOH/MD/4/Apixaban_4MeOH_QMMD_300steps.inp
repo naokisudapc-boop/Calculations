@@ -1,0 +1,22 @@
+# Apixaban + 4 MeOH Born-Oppenheimer molecular dynamics (short version)
+# Starting geometry: Apixaban + 4 MeOH initial cluster (built via solvent_swap.py from Explicit4H2O)
+# Total atoms: 83
+# Target test trajectory: 0.15 ps (300 steps x 0.5 fs)
+
+! MD r2SCAN-3c TightSCF
+
+%pal
+  nprocs 4
+end
+
+%maxcore 1500
+
+%md
+  Timestep 0.5_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Dump Position Stride 10 Filename "Apixaban_4MeOH_MD.xyz"
+  Run 300
+end
+
+* xyzfile 0 1 Apixaban_Explicit4MeOH_initial_check.xyz

@@ -1,0 +1,24 @@
+# Apixaban + 10 MeOH Born-Oppenheimer molecular dynamics (short version)
+# Starting geometry: Apixaban + 10 methanol cluster
+#   (built via scripts/solvent_swap.py from Apixaban_Explicit10H2O_repositioned_initial.xyz,
+#    n-solvent=10, template=methanol, O position & H-bond donor direction preserved)
+# Total atoms: 119
+# Target test trajectory: 0.15 ps (300 steps x 0.5 fs)
+
+! MD r2SCAN-3c TightSCF
+
+%pal
+  nprocs 4
+end
+
+%maxcore 1500
+
+%md
+  Timestep 0.5_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Dump Position Stride 10 Filename "Apixaban_10MeOH_MD.xyz"
+  Run 300
+end
+
+* xyzfile 0 1 Apixaban_Explicit10MeOH_repositioned.xyz
