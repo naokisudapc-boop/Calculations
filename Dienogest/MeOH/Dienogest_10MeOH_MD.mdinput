@@ -1,0 +1,6 @@
+  Timestep 1.0_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Cell Sphere -5.521, 1.467, -0.724, 15.0 Spring 20
+  Dump Position Stride 100 Filename "Dienogest_10MeOH_XTB.xyz"
+  Run 20000

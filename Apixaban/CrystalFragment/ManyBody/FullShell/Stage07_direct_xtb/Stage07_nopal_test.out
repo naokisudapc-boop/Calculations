@@ -1,0 +1,6 @@
+########################################################################
+[ERROR] Program stopped due to fatal error
+-2- Command line argument parsing failed
+-1- prog_main: No input file given, so there is nothing to do
+########################################################################
+abnormal termination of xtb

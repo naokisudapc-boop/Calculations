@@ -1,0 +1,32 @@
+# Apixaban + 10 H2O: cheap XTB2 pre-equilibration MD
+# Purpose:
+#   The r2SCAN-3c QM-MD (Apixaban_10H2O_QMMD_0.5ps) only ran 500 fs and the
+#   waters (placed 4-10 Angstrom from Apixaban) never reached real H-bonding
+#   distance (~2.7-3.0 Angstrom) - 500 fs at 298 K was too short to diffuse in.
+#   Since Restart-extension isn't practical here (comparing multiple solvents
+#   means many independent runs), this instead uses the much cheaper XTB2
+#   semiempirical method to run a long MD (20 ps) so the waters have time to
+#   diffuse toward Apixaban and settle into a solvation shell.
+#
+# Starting geometry: same initial (unequilibrated) structure as the original
+#   QM-MD run - Apixaban_Explicit10H2O_repositioned_initial.xyz
+#
+# Next step: take the final (or a late, low-energy, well-equilibrated) frame
+#   from this trajectory as the starting geometry for the production
+#   r2SCAN-3c QM-MD or Opt, instead of the current loosely-placed waters.
+#
+# Note: XTB2 energies/forces are NOT at the same level as r2SCAN-3c - this
+#   run is only for generating a better-equilibrated starting geometry, not
+#   for any energetics used in the DMSO/Water/MeOH comparison.
+
+! XTB2 MD
+
+%md
+  Timestep 1.0_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Dump Position Stride 100 Filename "Apixaban_10H2O_XTB_preequil.xyz"
+  Run 20000
+end
+
+* xyzfile 0 1 Apixaban_Explicit10H2O_repositioned_initial.xyz

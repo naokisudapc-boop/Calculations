@@ -1,0 +1,238 @@
+      -----------------------------------------------------------      
+     |                   =====================                   |     
+     |                           x T B                           |     
+     |                   =====================                   |     
+     |                         S. Grimme                         |     
+     |          Mulliken Center for Theoretical Chemistry        |     
+     |                    University of Bonn                     |     
+      -----------------------------------------------------------      
+
+   * xtb version 6.7.1pre (5071a88) compiled by 'Marcel@Raven' on 2024-07-23
+
+   xtb is free software: you can redistribute it and/or modify it under
+   the terms of the GNU Lesser General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
+   xtb is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Lesser General Public License for more details.
+   
+   Cite this work as:
+   * C. Bannwarth, E. Caldeweyher, S. Ehlert, A. Hansen, P. Pracht,
+     J. Seibert, S. Spicher, S. Grimme, WIREs Comput. Mol. Sci., 2020, 11,
+     e01493. DOI: 10.1002/wcms.1493
+   
+   for GFN2-xTB:
+   * C. Bannwarth, S. Ehlert and S. Grimme., J. Chem. Theory Comput., 2019,
+     15, 1652-1671. DOI: 10.1021/acs.jctc.8b01176
+   for GFN1-xTB:
+   * S. Grimme, C. Bannwarth, P. Shushkov, J. Chem. Theory Comput., 2017,
+     13, 1989-2009. DOI: 10.1021/acs.jctc.7b00118
+   for GFN0-xTB:
+   * P. Pracht, E. Caldeweyher, S. Ehlert, S. Grimme, ChemRxiv, 2019, preprint.
+     DOI: 10.26434/chemrxiv.8326202.v1
+   for GFN-FF:
+   * S. Spicher and S. Grimme, Angew. Chem. Int. Ed., 2020, 59, 15665-15673.
+     DOI: 10.1002/anie.202004239
+   
+   for ALPB and GBSA implicit solvation:
+   * S. Ehlert, M. Stahn, S. Spicher, S. Grimme, J. Chem. Theory Comput.,
+     2021, 17, 4250-4261. DOI: 10.1021/acs.jctc.1c00471
+   
+   for ddCOSMO and CPCM-X implicit solvation:
+   * M. Stahn, S. Ehlert, S. Grimme, J. Phys. Chem. A,
+     2023, XX, XXXX-XXXX. DOI: 10.1021/acs.jpca.3c04382
+   
+   for DFT-D4:
+   * E. Caldeweyher, C. Bannwarth and S. Grimme, J. Chem. Phys., 2017,
+     147, 034112. DOI: 10.1063/1.4993215
+   * E. Caldeweyher, S. Ehlert, A. Hansen, H. Neugebauer, S. Spicher,
+     C. Bannwarth and S. Grimme, J. Chem. Phys., 2019, 150, 154122.
+     DOI: 10.1063/1.5090222
+   * E. Caldeweyher, J.-M. Mewes, S. Ehlert and S. Grimme, Phys. Chem. Chem. Phys.
+     2020, 22, 8499-8512. DOI: 10.1039/D0CP00502A
+   
+   for sTDA-xTB:
+   * S. Grimme and C. Bannwarth, J. Chem. Phys., 2016, 145, 054103.
+     DOI: 10.1063/1.4959605
+   
+   in the mass-spec context:
+   * V. Asgeirsson, C. Bauer and S. Grimme, Chem. Sci., 2017, 8, 4879.
+     DOI: 10.1039/c7sc00601b
+   * J. Koopman and S. Grimme, ACS Omega 2019, 4, 12, 15120-15133.
+     DOI: 10.1021/acsomega.9b02011
+   
+   for metadynamics refer to:
+   * S. Grimme, J. Chem. Theory Comput., 2019, 155, 2847-2862
+     DOI: 10.1021/acs.jctc.9b00143
+   
+   for SPH calculations refer to:
+   * S. Spicher and S. Grimme, J. Chem. Theory Comput., 2021, 17, 1701-1714
+     DOI: 10.1021/acs.jctc.0c01306
+   
+   for ONIOM refer to:
+   * C. Plett, A. Katbashev, S. Ehlert, S. Grimme, M. Bursch,
+     Phys. Chem. Chem. Phys., 2023, 25, 17860-17868. DOI: 10.1039/D3CP02178E
+   
+   for DIPRO refer to:
+   * J. Kohn, N. Gildemeister, S. Grimme, D. Fazzi, A. Hansen,
+     J. Chem. Phys., 2023, just accepted.
+   
+   for PTB refer to:
+   * S. Grimme, M. Mueller, A. Hansen, J. Chem. Phys., 2023, 158, 124111.
+     DOI: 10.1063/5.0137838
+   
+   with help from (in alphabetical order)
+   P. Atkinson, C. Bannwarth, F. Bohle, G. Brandenburg, E. Caldeweyher
+   M. Checinski, S. Dohm, S. Ehlert, S. Ehrlich, I. Gerasimov, C. Hölzer
+   A. Katbashev, J. Kohn, J. Koopman, C. Lavigne, S. Lehtola, F. März, M. Müller,
+   F. Musil, H. Neugebauer, J. Pisarek, C. Plett, P. Pracht, F. Pultar,
+   J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
+   J. Stückrath, T. Rose, and J. Unsleber
+   
+ * started run on 2026/10/03 at 11:58:33.290     
+   ID    Z sym.   atoms
+    1    1 H      1, 3, 6, 11, 12, 17, 19, 22, 24, 26-30, 39, 40, 42, 43, 45,
+                  46, 48, 49, 52, 56, 57, 61, 62, 64, 65, 67, 68, 70, 71, 74,
+                  78, 79, 82, 84, 87, 92, 93, 98, 100, 103, 105, 107-111,
+                  120, 121, 123, 124, 126, 127, 129, 130, 133, 137, 138, 141,
+                  143, 146, 151, 152, 157, 159, 162, 164, 166-170, 179, 180,
+                  184, 186-188, 191, 193, 194, 199, 200, 205, 208-210, 218,
+                  219, 221, 222, 224, 225, 228, 231, 233, 235, 238, 239, 243,
+                  245-247, 250, 252, 253, 258, 259, 264, 267-269, 277, 278,
+                  280, 281, 283, 284, 287, 290, 292, 294, 297, 298, 300, 301,
+                  303, 304, 307, 310, 312, 314, 317, 319, 320, 325, 326, 331,
+                  334-336, 344-346, 350, 352, 353, 356, 357, 359, 360, 362,
+                  363, 366, 369, 371, 373, 376, 378, 379, 384, 385, 390,
+                  393-395, 403-405, 409, 411, 412, 415, 416, 420, 422-424,
+                  427, 429, 430, 435, 436, 441, 444-446, 454, 455, 457, 458,
+                  460, 461, 464, 467, 469, 471, 474, 475, 479, 481-483, 486,
+                  488, 489, 494, 495, 500, 503-505, 513, 514, 516, 517, 519,
+                  520, 523, 526, 528, 530, 533, 534, 536, 537, 539, 540, 542,
+                  543, 546, 550, 551, 554, 556, 559, 564, 565, 570, 572, 575,
+                  577, 579-583, 591, 593, 596, 601, 602, 607, 609, 612, 614,
+                  616-620, 629, 630, 632, 633, 635, 636, 638, 639, 642, 646,
+                  647, 650, 652, 655, 660, 661, 666, 668, 671, 673, 675-679,
+                  688, 689, 691, 692, 694, 695, 697, 698, 701, 705, 706
+    2    6 C      2, 4, 5, 7-10, 13-16, 18, 20, 21, 23, 25, 38, 41, 44, 47,
+                  50, 51, 53-55, 60, 63, 66, 69, 72, 73, 75-77, 83, 85, 86,
+                  88-91, 94-97, 99, 101, 102, 104, 106, 119, 122, 125, 128,
+                  131, 132, 134-136, 142, 144, 145, 147-150, 153-156, 158,
+                  160, 161, 163, 165, 178, 182, 183, 185, 190, 192, 195-198,
+                  201-204, 206, 207, 217, 220, 223, 226, 227, 229, 230, 232,
+                  234, 237, 241, 242, 244, 249, 251, 254-257, 260-263, 265,
+                  266, 276, 279, 282, 285, 286, 288, 289, 291, 293, 296, 299,
+                  302, 305, 306, 308, 309, 311, 313, 316, 318, 321-324,
+                  327-330, 332, 333, 343, 348, 349, 351, 355, 358, 361, 364,
+                  365, 367, 368, 370, 372, 375, 377, 380-383, 386-389, 391,
+                  392, 402, 407, 408, 410, 414, 418, 419, 421, 426, 428,
+                  431-434, 437-440, 442, 443, 453, 456, 459, 462, 463, 465,
+                  466, 468, 470, 473, 477, 478, 480, 485, 487, 490-493,
+                  496-499, 501, 502, 512, 515, 518, 521, 522, 524, 525, 527,
+                  529, 532, 535, 538, 541, 544, 545, 547-549, 555, 557, 558,
+                  560-563, 566-569, 571, 573, 574, 576, 578, 592, 594, 595,
+                  597-600, 603-606, 608, 610, 611, 613, 615, 628, 631, 634,
+                  637, 640, 641, 643-645, 651, 653, 654, 656-659, 662-665,
+                  667, 669, 670, 672, 674, 687, 690, 693, 696, 699, 700,
+                  702-704
+    3    7 N      31-34, 58, 80, 112-115, 139, 171-174, 211-214, 236,
+                  270-273, 295, 315, 337-340, 374, 396-399, 447-450, 472,
+                  506-509, 531, 552, 584-587, 621-624, 648, 680-683, 707
+    4    8 O      35-37, 59, 81, 116-118, 140, 175-177, 181, 189, 215, 216,
+                  240, 248, 274, 275, 341, 342, 347, 354, 400, 401, 406, 413,
+                  417, 425, 451, 452, 476, 484, 510, 511, 553, 588-590,
+                  625-627, 649, 684-686, 708
+
+           -------------------------------------------------
+          |                Calculation Setup                |
+           -------------------------------------------------
+
+          program call               : "C:\ORCA_6.1.1\xtb-6.7.1pre\xtb.exe"  "Stage07_nopal_test_XTB.xyz" --grad -c 0 -u 0 -P 1 --namespace Stage07_direct --input "Stage07_nopal_test_XTB.input.tmp" --acc 1.000000 
+          calculation namespace      : Stage07_direct
+          coordinate file            : Stage07_nopal_test_XTB.xyz
+          omp threads                :                     1
+
+
+molecular fragmentation (1/2 indicates fragments):
+111111111111111111111111111111111111111111111111111111111112222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222
+# atoms in fragment 1/2:    59   649
+ fragment masses (1/2) :      459.50     5054.48
+CMA distance (Bohr)    :   2.230
+constraining FC (au)   :  0.0500
+
+           -------------------------------------------------
+          |                 G F N 2 - x T B                 |
+           -------------------------------------------------
+
+        Reference                      10.1021/acs.jctc.8b01176
+      * Hamiltonian:
+        H0-scaling (s, p, d)           1.850000    2.230000    2.230000
+        zeta-weighting                 0.500000
+      * Dispersion:
+        s8                             2.700000
+        a1                             0.520000
+        a2                             5.000000
+        s9                             5.000000
+      * Repulsion:
+        kExp                           1.500000    1.000000
+        rExp                           1.000000
+      * Coulomb:
+        alpha                          2.000000
+        third order                    shell-resolved
+        anisotropic                    true
+        a3                             3.000000
+        a5                             4.000000
+        cn-shift                       1.200000
+        cn-exp                         4.000000
+        max-rad                        5.000000
+
+
+          ...................................................
+          :                      SETUP                      :
+          :.................................................:
+          :  # basis functions                1932          :
+          :  # atomic orbitals                1932          :
+          :  # shells                         1116          :
+          :  # electrons                      2088          :
+          :  max. iterations                   250          :
+          :  Hamiltonian                  GFN2-xTB          :
+          :  restarted?                      false          :
+          :  GBSA solvation                  false          :
+          :  PC potential                    false          :
+          :  electronic temp.          300.0000000     K    :
+          :  accuracy                    1.0000000          :
+          :  -> integral cutoff          0.2500000E+02      :
+          :  -> integral neglect         0.1000000E-07      :
+          :  -> SCF convergence          0.1000000E-05 Eh   :
+          :  -> wf. convergence          0.1000000E-03 e    :
+          :  Broyden damping             0.4000000          :
+          :  net charge                          0          :
+          :  unpaired electrons                  0          :
+          ...................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1  -1185.3132830 -0.118531E+04  0.412E+00    2.77       0.0  T
+   2  -1188.3330781 -0.301980E+01  0.242E+00    2.04       1.0  T
+   3  -1188.6162233 -0.283145E+00  0.128E+00    2.62       1.0  T
+   4  -1188.6625704 -0.463470E-01  0.429E-01    2.40       1.0  T
+   5  -1188.7536071 -0.910368E-01  0.935E-02    2.42       1.0  T
+   6  -1188.7548142 -0.120707E-02  0.530E-02    2.43       1.0  T
+   7  -1188.7557239 -0.909670E-03  0.218E-02    2.44       1.0  T
+   8  -1188.7557709 -0.469807E-04  0.864E-03    2.44       1.0  T
+   9  -1188.7557923 -0.214663E-04  0.391E-03    2.44       1.0  T
+  10  -1188.7557942 -0.182928E-05  0.164E-03    2.44       2.3  T
+  11  -1188.7557951 -0.964316E-06  0.535E-04    2.44       7.0  T
+  12  -1188.7557952 -0.627615E-07  0.271E-04    2.44      13.9  T
+
+   *** convergence criteria satisfied after 12 iterations ***

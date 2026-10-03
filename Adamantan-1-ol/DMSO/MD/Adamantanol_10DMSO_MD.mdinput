@@ -1,0 +1,6 @@
+  Timestep 1.0_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Cell Sphere 30.978, -19.977, -0.683, 11.0 Spring 20
+  Dump Position Stride 100 Filename "Adamantanol_10DMSO_XTB.xyz"
+  Run 20000

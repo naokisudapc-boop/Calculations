@@ -1,0 +1,1 @@
+Map values for surface "surface": minimum -0.09041, mean 0.06088, maximum 0.2442

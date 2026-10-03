@@ -1,0 +1,41 @@
+# Apixaban + 10 H2O: cheap XTB2 pre-equilibration MD, WITH spherical confinement
+# Purpose:
+#   The first attempt at this pre-equilibration (Apixaban_10H2O_XTB_preequil.inp,
+#   no confinement) failed: over 20 ps, 7 of 10 waters flew away to 90-310 Angstrom
+#   from Apixaban (no periodic boundary conditions / no wall -> unconfined gas-phase
+#   MD disperses weakly-bound solvent instead of clustering it).
+#
+#   This version adds a "Cell Sphere" - a soft, non-periodic repulsive wall (NOT a
+#   pulling/biasing force) centered on the Apixaban centroid. It only pushes back
+#   atoms that try to leave the sphere; inside the sphere, dynamics are completely
+#   unbiased. This prevents evaporation while still allowing the waters to freely
+#   explore positions around Apixaban and find H-bonding sites.
+#
+# Sphere center = centroid of the 59 Apixaban heavy+H atoms in the initial structure
+#   (31.537, -19.865, -0.109), computed from Apixaban_Explicit10H2O_repositioned_initial.xyz
+# Sphere radius = 14.0 Angstrom (Apixaban's own farthest atom from this centroid is
+#   ~9.0 Angstrom, so this gives roughly a 5 Angstrom solvation shell of free space
+#   beyond the Apixaban surface before the wall engages)
+# Spring constant = 20 kJ/mol/Ang^2 (a bit stiffer than the 10 kJ/mol/Ang^2 default,
+#   still soft enough not to require a smaller time step)
+#
+# Starting geometry: same initial (unequilibrated) structure as before -
+#   Apixaban_Explicit10H2O_repositioned_initial.xyz
+#
+# Note: XTB2 energies/forces are NOT at the same level as r2SCAN-3c - this run is
+#   only for generating a better-equilibrated starting geometry (a late frame from
+#   this trajectory, once waters have settled near Apixaban), not for any
+#   energetics used in the DMSO/Water/MeOH comparison.
+
+! XTB2 MD
+
+%md
+  Timestep 1.0_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Cell Sphere 31.537, -19.865, -0.109, 14.0 Spring 20
+  Dump Position Stride 100 Filename "Apixaban_10H2O_XTB_preequil_confined.xyz"
+  Run 20000
+end
+
+* xyzfile 0 1 Apixaban_Explicit10H2O_repositioned_initial.xyz

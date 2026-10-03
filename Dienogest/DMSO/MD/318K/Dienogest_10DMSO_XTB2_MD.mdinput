@@ -1,0 +1,7 @@
+
+  Timestep 1.0_fs
+  Initvel 318.15_K
+  Thermostat NHC 318.15_K Timecon 20.0_fs
+  Cell Sphere 31.021, -20.109, -0.926, 15.5 Spring 20
+  Dump Position Stride 100 Filename "Dienogest_10DMSO_XTB.xyz"
+  Run 20000

@@ -1,0 +1,27 @@
+# NOTE: XTB2 does not support SMD/CPCM in ORCA (see error below) - switched
+# to ALPB, the solvation model native to the XTB family, using the same
+# "dmf" solvent name (also listed under the ALPB column in the ORCA solvent
+# table).
+#
+# Original error from Monomer_XTB2_SMD.inp:
+#   WARNING: Found SMD or SMDSolvent or CPCM keyword with XTB calculation.
+#            This is not implemented.
+#     ===> : Please use ALPB, ddCOSMO or CPCMX instead
+#     ===> : Skipping actual calculation
+
+! XTB2 Opt ALPB(dmf)
+
+* xyz 0 1
+C    0.000000    0.000000    0.000000
+O    0.000000    1.220000    0.000000
+H   -0.953000   -0.550000    0.000000
+N    1.169000   -0.675000    0.000000
+C    1.169000   -2.125000    0.000000
+C    2.425000    0.050000    0.000000
+H    2.197000   -2.488000    0.000000
+H    0.655000   -2.488000    0.890000
+H    0.655000   -2.488000   -0.890000
+H    3.253000   -0.659000    0.000000
+H    2.482000    0.677000    0.891000
+H    2.482000    0.677000   -0.891000
+*

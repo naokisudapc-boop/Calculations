@@ -1,0 +1,22 @@
+{
+ "XTB2": {
+  "single_point": true,
+  "dimers": {
+   "D1": {
+    "dE_kcal_mol": -14.7,
+    "dE_kJ_mol": -61.49,
+    "dE_eh": -0.02341891627
+   },
+   "D2": {
+    "dE_kcal_mol": -17.15,
+    "dE_kJ_mol": -71.75,
+    "dE_eh": -0.02732722353
+   },
+   "D3": {
+    "dE_kcal_mol": -16.75,
+    "dE_kJ_mol": -70.09,
+    "dE_eh": -0.0266942914
+   }
+  }
+ }
+}

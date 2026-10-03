@@ -1,0 +1,21 @@
+# MeOH: gas-phase XTB2 geometry optimization
+# Purpose:
+#   Cheap semiempirical (XTB2) gas-phase Opt of a single methanol molecule, for
+#   comparison with the r2SCAN-3c gas/SMD MeOH monomer result (MeOH/Monomer.out)
+#   and alongside the Apixaban, water, and DMSO gas-phase XTB2 Opts
+#   (Apixaban/Gas/XTB2, water/XTB2, DMSO/XTB2).
+#
+# Starting geometry: same MeOH monomer geometry used elsewhere in this project
+#   (MeOH/Monomer.xyz, r2SCAN-3c/SMD(methanol)-optimized) - used only as a
+#   reasonable starting guess; no solvent model here (pure gas phase).
+
+! XTB2 Opt
+
+* xyz 0 1
+H          -2.23737320576962     -1.55421611260053     -0.39462891597152
+C          -1.62856595101592     -1.63532481558725     -1.30538337609812
+O          -0.22916988570536     -1.72226232512923     -0.99786837151069
+H          -1.84549746627257     -0.77961315040836     -1.95907417939334
+H          -1.90119205534286     -2.55561327742280     -1.82928148238138
+H           0.01964856410634     -0.90968031885183     -0.54012367464494
+*

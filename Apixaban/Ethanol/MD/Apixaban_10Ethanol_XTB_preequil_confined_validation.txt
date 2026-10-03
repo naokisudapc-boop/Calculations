@@ -1,0 +1,42 @@
+Apixaban + 10 Ethanol validation report
+
+Source geometries
+-----------------
+Apixaban atoms: 59
+Ethanol atoms: 9
+Total atoms: 149
+
+Apixaban centroid
+-----------------
+Actual centroid: (31.536644136, -19.864593203, -0.108796576)
+Input sphere center: (31.537, -19.865, -0.109)
+
+Placement
+---------
+Reference shell directions: 10 directions copied from the supplied MeCN template
+Ethanol reference atom: O
+Shell offset: 12.600 Ang
+Sphere radius: 16.000 Ang
+Orientation: ethanol heavy-atom bulk points radially outward
+
+Collision checks
+----------------
+Minimum Ethanol-Apixaban distance: 3.834109 Ang
+Closest pair: Ethanol #5, atom 4 (H) vs Apixaban atom 38 (H)
+
+Minimum Ethanol-Ethanol distance: 10.929794 Ang
+Closest pair: Ethanol #5 atom 4 (H) vs Ethanol #2 atom 4 (H)
+
+Minimum van-der-Waals clearance: 1.320839 Ang
+(positive means no van-der-Waals overlap under the radii used for this check)
+
+Spherical confinement
+---------------------
+Maximum atom-center distance: 15.944253 Ang
+Sphere radius: 16.000000 Ang
+All atoms inside sphere: YES
+Margin to sphere boundary: 0.055747 Ang
+
+Generated file
+--------------
+/mnt/data/Apixaban_10Ethanol_XTB_preequil_confined.inp

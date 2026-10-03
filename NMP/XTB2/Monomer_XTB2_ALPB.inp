@@ -1,0 +1,34 @@
+# N-Methyl-2-pyrrolidone (NMP): gas-phase XTB2 Opt (no solvation)
+#
+# UPDATE: "ALPB(nmp)" was confirmed NOT to be a recognized ORCA keyword -
+#   ORCA rejected the input outright ("UNRECOGNIZED OR DUPLICATED
+#   KEYWORD(S) IN SIMPLE INPUT LINE: ALPB(NMP)"). Per the chosen fallback,
+#   this run drops implicit solvation entirely and is a plain gas-phase
+#   XTB2 optimization. The solvated reference for NMP comes from the
+#   r2SCAN-3c/CPCM calculation instead (Monomer_r2SCAN3c_CPCM.inp, which
+#   uses an explicit dielectric constant/refractive index rather than a
+#   named solvent, so it does not depend on NMP being in any named list).
+#
+# Starting geometry: same idealized pyrrolidone-ring guess as
+# Monomer_r2SCAN3c_CPCM.inp.
+
+! XTB2 Opt
+
+* xyz 0 1
+N     0.000000    1.276000    0.000000
+C    -1.213000    0.394000    0.000000
+C    -0.750000   -1.032000    0.000000
+C     0.750000   -1.032000    0.000000
+C     1.213000    0.394000    0.000000
+O    -2.373000    0.771000    0.000000
+C     0.000000    2.746000    0.000000
+H     1.028000    3.109000    0.000000
+H    -0.514000    3.109000    0.890000
+H    -0.514000    3.109000   -0.890000
+H    -1.162000   -1.598000    0.750000
+H    -1.162000   -1.598000   -0.750000
+H     1.162000   -1.598000    0.750000
+H     1.162000   -1.598000   -0.750000
+H     1.878000    0.610000    0.750000
+H     1.878000    0.610000   -0.750000
+*

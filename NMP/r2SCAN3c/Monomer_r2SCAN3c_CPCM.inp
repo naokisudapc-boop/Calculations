@@ -1,0 +1,50 @@
+# N-Methyl-2-pyrrolidone (NMP): gas-phase-guess Opt + Freq with CPCM solvation
+#
+# NOTE ON SOLVENT NAME: unlike ethanol/acetone/DMF/benzene/etc., NMP does not
+# appear with confidence in ORCA's built-in named SMD solvent list (could not
+# verify "nmp" / "n-methylpyrrolidone" / "n-methyl-2-pyrrolidone" as a
+# recognized keyword). To avoid a repeat of the earlier DMF/XTB2 keyword
+# error, this uses plain CPCM with an EXPLICITLY specified dielectric
+# constant and refractive index instead of relying on a named-solvent
+# keyword - this syntax is guaranteed valid regardless of whether NMP is in
+# ORCA's named list.
+#   epsilon (dielectric constant) = 32.2
+#   refrac  (refractive index)    = 1.468
+# (both are standard literature values for NMP at ~20-25 C)
+# This does NOT include the SMD-specific non-electrostatic (CDS) term with
+# NMP-specific surface-tension/H-bonding parameters - only the CPCM
+# electrostatic (dielectric) contribution. If the full SMD CDS term is
+# needed for NMP specifically, that requires additional solvent descriptors
+# (Abraham's alpha/beta, macroscopic surface tension, aromatic/halogen
+# fractions) that would need to be looked up and entered via a %smd block.
+#
+# Starting geometry: idealized regular-pentagon-based guess for the
+# pyrrolidone ring (N-C(=O)-CH2-CH2-CH2-, closing back to N) plus the
+# N-methyl group; bond lengths/angles are only approximate and will relax
+# substantially during optimization.
+
+! r2SCAN-3c TightSCF Opt Freq KeepDens CPCM
+
+%cpcm
+  epsilon 32.2
+  refrac  1.468
+end
+
+* xyz 0 1
+N     0.000000    1.276000    0.000000
+C    -1.213000    0.394000    0.000000
+C    -0.750000   -1.032000    0.000000
+C     0.750000   -1.032000    0.000000
+C     1.213000    0.394000    0.000000
+O    -2.373000    0.771000    0.000000
+C     0.000000    2.746000    0.000000
+H     1.028000    3.109000    0.000000
+H    -0.514000    3.109000    0.890000
+H    -0.514000    3.109000   -0.890000
+H    -1.162000   -1.598000    0.750000
+H    -1.162000   -1.598000   -0.750000
+H     1.162000   -1.598000    0.750000
+H     1.162000   -1.598000   -0.750000
+H     1.878000    0.610000    0.750000
+H     1.878000    0.610000   -0.750000
+*

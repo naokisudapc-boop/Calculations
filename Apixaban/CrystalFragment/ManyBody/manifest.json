@@ -1,0 +1,1279 @@
+{
+ "cif": "Apixaban_FormN1_1060528.cif",
+ "natoms_molecule": 59,
+ "order": [
+  "D2",
+  "D3",
+  "D1",
+  "D5",
+  "D7",
+  "D4",
+  "D6",
+  "D8",
+  "D9"
+ ],
+ "direction": [
+  -0.9794529022688072,
+  -0.09338334828656722,
+  -0.1787499999999999
+ ],
+ "direction_rule": "best: clash-free (>= 2.0 A) direction keeping the largest summed |dE_int| (70.8 kcal/mol, closest approach 2.07 A)",
+ "tau": 0.1,
+ "pulls": [
+  0.5,
+  1.0,
+  1.5,
+  2.0,
+  3.0,
+  5.0
+ ],
+ "neighbours": [
+  {
+   "id": 1,
+   "type": "D2",
+   "centroid_A": 5.704673598723769,
+   "min_dist_A": 2.628688759702903
+  },
+  {
+   "id": 2,
+   "type": "D3",
+   "centroid_A": 6.293622753468905,
+   "min_dist_A": 2.48965353350169
+  },
+  {
+   "id": 3,
+   "type": "D1",
+   "centroid_A": 10.251694243163769,
+   "min_dist_A": 2.1239637131513356
+  },
+  {
+   "id": 4,
+   "type": "D1",
+   "centroid_A": 10.251694243163792,
+   "min_dist_A": 2.1239637131513343
+  },
+  {
+   "id": 5,
+   "type": "D5",
+   "centroid_A": 10.329399418792455,
+   "min_dist_A": 2.393527767675843
+  },
+  {
+   "id": 6,
+   "type": "D5",
+   "centroid_A": 10.329399418792477,
+   "min_dist_A": 2.393527767675843
+  },
+  {
+   "id": 7,
+   "type": "D7",
+   "centroid_A": 10.733419697581498,
+   "min_dist_A": 2.472471386801353
+  },
+  {
+   "id": 8,
+   "type": "D7",
+   "centroid_A": 10.733419697581521,
+   "min_dist_A": 2.472471386801353
+  },
+  {
+   "id": 9,
+   "type": "D4",
+   "centroid_A": 11.73504868886569,
+   "min_dist_A": 3.1000938008513463
+  },
+  {
+   "id": 10,
+   "type": "D6",
+   "centroid_A": 13.842199999999991,
+   "min_dist_A": 2.69668695736745
+  },
+  {
+   "id": 11,
+   "type": "D6",
+   "centroid_A": 13.842200000000027,
+   "min_dist_A": 2.6966869573674472
+  },
+  {
+   "id": 12,
+   "type": "D8",
+   "centroid_A": 13.897299245928256,
+   "min_dist_A": 2.568012321123318
+  },
+  {
+   "id": 13,
+   "type": "D8",
+   "centroid_A": 13.89729924592827,
+   "min_dist_A": 2.568012321123318
+  },
+  {
+   "id": 14,
+   "type": "D9",
+   "centroid_A": 12.03236278646276,
+   "min_dist_A": 2.864971137183884
+  }
+ ],
+ "half_shell_neighbours": [
+  2,
+  3,
+  4,
+  6,
+  8,
+  10,
+  11,
+  13,
+  14
+ ],
+ "jobs": [
+  {
+   "file": "FullShell/monoA_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "monoA"
+  },
+  {
+   "file": "Pairs/Pair_01_D2_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 1,
+   "type": "D2"
+  },
+  {
+   "file": "Pairs/Mono_01_D2_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 1,
+   "type": "D2"
+  },
+  {
+   "file": "Pairs/Pair_02_D3_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "Pairs/Mono_02_D3_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "Pairs/Pair_03_D1_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "Pairs/Mono_03_D1_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "Pairs/Pair_04_D1_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "Pairs/Mono_04_D1_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "Pairs/Pair_05_D5_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 5,
+   "type": "D5"
+  },
+  {
+   "file": "Pairs/Mono_05_D5_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 5,
+   "type": "D5"
+  },
+  {
+   "file": "Pairs/Pair_06_D5_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "Pairs/Mono_06_D5_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "Pairs/Pair_07_D7_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 7,
+   "type": "D7"
+  },
+  {
+   "file": "Pairs/Mono_07_D7_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 7,
+   "type": "D7"
+  },
+  {
+   "file": "Pairs/Pair_08_D7_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "Pairs/Mono_08_D7_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "Pairs/Pair_09_D4_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 9,
+   "type": "D4"
+  },
+  {
+   "file": "Pairs/Mono_09_D4_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 9,
+   "type": "D4"
+  },
+  {
+   "file": "Pairs/Pair_10_D6_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "Pairs/Mono_10_D6_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "Pairs/Pair_11_D6_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "Pairs/Mono_11_D6_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "Pairs/Pair_12_D8_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 12,
+   "type": "D8"
+  },
+  {
+   "file": "Pairs/Mono_12_D8_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 12,
+   "type": "D8"
+  },
+  {
+   "file": "Pairs/Pair_13_D8_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "Pairs/Mono_13_D8_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "Pairs/Pair_14_D9_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "pair",
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "Pairs/Mono_14_D9_XTB2_SP.inp",
+   "natoms": 59,
+   "kind": "mono_neighbour",
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "FullShell/Stage02_D2+D3_cluster_XTB2_SP.inp",
+   "natoms": 177,
+   "kind": "stage_cluster",
+   "stage": 2,
+   "types": [
+    "D2",
+    "D3"
+   ],
+   "neighbours": [
+    1,
+    2
+   ]
+  },
+  {
+   "file": "FullShell/Stage02_D2+D3_shell_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "stage_shell",
+   "stage": 2,
+   "types": [
+    "D2",
+    "D3"
+   ],
+   "neighbours": [
+    1,
+    2
+   ]
+  },
+  {
+   "file": "FullShell/Stage03_D2+D3+D1_cluster_XTB2_SP.inp",
+   "natoms": 295,
+   "kind": "stage_cluster",
+   "stage": 3,
+   "types": [
+    "D2",
+    "D3",
+    "D1"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "file": "FullShell/Stage03_D2+D3+D1_shell_XTB2_SP.inp",
+   "natoms": 236,
+   "kind": "stage_shell",
+   "stage": 3,
+   "types": [
+    "D2",
+    "D3",
+    "D1"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "file": "FullShell/Stage04_D2+D3+D1+D5_cluster_XTB2_SP.inp",
+   "natoms": 413,
+   "kind": "stage_cluster",
+   "stage": 4,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "file": "FullShell/Stage04_D2+D3+D1+D5_shell_XTB2_SP.inp",
+   "natoms": 354,
+   "kind": "stage_shell",
+   "stage": 4,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "file": "FullShell/Stage05_D2+D3+D1+D5+D7_cluster_XTB2_SP.inp",
+   "natoms": 531,
+   "kind": "stage_cluster",
+   "stage": 5,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "file": "FullShell/Stage05_D2+D3+D1+D5+D7_shell_XTB2_SP.inp",
+   "natoms": 472,
+   "kind": "stage_shell",
+   "stage": 5,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "file": "FullShell/Stage06_D2+D3+D1+D5+D7+D4_cluster_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "stage_cluster",
+   "stage": 6,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "file": "FullShell/Stage06_D2+D3+D1+D5+D7+D4_shell_XTB2_SP.inp",
+   "natoms": 531,
+   "kind": "stage_shell",
+   "stage": 6,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "file": "FullShell/Stage07_D2+D3+D1+D5+D7+D4+D6_cluster_XTB2_SP.inp",
+   "natoms": 708,
+   "kind": "stage_cluster",
+   "stage": 7,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4",
+    "D6"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "file": "FullShell/Stage07_D2+D3+D1+D5+D7+D4+D6_shell_XTB2_SP.inp",
+   "natoms": 649,
+   "kind": "stage_shell",
+   "stage": 7,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4",
+    "D6"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "file": "FullShell/Stage08_D2+D3+D1+D5+D7+D4+D6+D8_cluster_XTB2_SP.inp",
+   "natoms": 826,
+   "kind": "stage_cluster",
+   "stage": 8,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4",
+    "D6",
+    "D8"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "file": "FullShell/Stage08_D2+D3+D1+D5+D7+D4+D6+D8_shell_XTB2_SP.inp",
+   "natoms": 767,
+   "kind": "stage_shell",
+   "stage": 8,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4",
+    "D6",
+    "D8"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "file": "FullShell/Stage09_D2+D3+D1+D5+D7+D4+D6+D8+D9_cluster_XTB2_SP.inp",
+   "natoms": 885,
+   "kind": "stage_cluster",
+   "stage": 9,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4",
+    "D6",
+    "D8",
+    "D9"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "FullShell/Stage09_D2+D3+D1+D5+D7+D4+D6+D8+D9_shell_XTB2_SP.inp",
+   "natoms": 826,
+   "kind": "stage_shell",
+   "stage": 9,
+   "types": [
+    "D2",
+    "D3",
+    "D1",
+    "D5",
+    "D7",
+    "D4",
+    "D6",
+    "D8",
+    "D9"
+   ],
+   "neighbours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_shell_XTB2_SP.inp",
+   "natoms": 531,
+   "kind": "hs_shell",
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+0.0A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 0.0,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+0.5A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 0.5,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+1.0A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 1.0,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+1.5A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 1.5,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+2.0A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 2.0,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+3.0A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 3.0,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_cluster_+5.0A_XTB2_SP.inp",
+   "natoms": 590,
+   "kind": "hs_cluster",
+   "d": 5.0,
+   "neighbours": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "file": "HalfShell/HS_pair_02_D3_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "HalfShell/HS_pair_02_D3_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "HalfShell/HS_pair_02_D3_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "HalfShell/HS_pair_02_D3_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "HalfShell/HS_pair_02_D3_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "HalfShell/HS_pair_02_D3_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 2,
+   "type": "D3"
+  },
+  {
+   "file": "HalfShell/HS_pair_03_D1_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_03_D1_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_03_D1_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_03_D1_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_03_D1_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_03_D1_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 3,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_04_D1_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_04_D1_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_04_D1_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_04_D1_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_04_D1_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_04_D1_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 4,
+   "type": "D1"
+  },
+  {
+   "file": "HalfShell/HS_pair_06_D5_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "HalfShell/HS_pair_06_D5_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "HalfShell/HS_pair_06_D5_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "HalfShell/HS_pair_06_D5_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "HalfShell/HS_pair_06_D5_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "HalfShell/HS_pair_06_D5_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 6,
+   "type": "D5"
+  },
+  {
+   "file": "HalfShell/HS_pair_08_D7_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "HalfShell/HS_pair_08_D7_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "HalfShell/HS_pair_08_D7_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "HalfShell/HS_pair_08_D7_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "HalfShell/HS_pair_08_D7_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "HalfShell/HS_pair_08_D7_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 8,
+   "type": "D7"
+  },
+  {
+   "file": "HalfShell/HS_pair_10_D6_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_10_D6_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_10_D6_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_10_D6_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_10_D6_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_10_D6_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 10,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_11_D6_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_11_D6_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_11_D6_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_11_D6_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_11_D6_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_11_D6_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 11,
+   "type": "D6"
+  },
+  {
+   "file": "HalfShell/HS_pair_13_D8_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "HalfShell/HS_pair_13_D8_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "HalfShell/HS_pair_13_D8_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "HalfShell/HS_pair_13_D8_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "HalfShell/HS_pair_13_D8_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "HalfShell/HS_pair_13_D8_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 13,
+   "type": "D8"
+  },
+  {
+   "file": "HalfShell/HS_pair_14_D9_+0.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 0.5,
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "HalfShell/HS_pair_14_D9_+1.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.0,
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "HalfShell/HS_pair_14_D9_+1.5A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 1.5,
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "HalfShell/HS_pair_14_D9_+2.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 2.0,
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "HalfShell/HS_pair_14_D9_+3.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 3.0,
+   "neighbour": 14,
+   "type": "D9"
+  },
+  {
+   "file": "HalfShell/HS_pair_14_D9_+5.0A_XTB2_SP.inp",
+   "natoms": 118,
+   "kind": "hs_pair",
+   "d": 5.0,
+   "neighbour": 14,
+   "type": "D9"
+  }
+ ]
+}

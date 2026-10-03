@@ -1,0 +1,5 @@
+  Timestep 1.0_fs
+  Initvel 298.15_K
+  Thermostat NHC 298.15_K Timecon 20.0_fs
+  Dump Position Stride 100 Filename "Apixaban_10H2O_XTB_preequil.xyz"
+  Run 20000

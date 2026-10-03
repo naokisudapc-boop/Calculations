@@ -1,0 +1,7 @@
+# ORCA / xTB generated logs and temporary files
+*.scf.log
+*.gbw
+*.densities
+*.densitiesinfo
+*.tmp
+*.tmp.*

@@ -1,0 +1,17 @@
+# Water: gas-phase XTB2 geometry optimization
+# Purpose:
+#   Cheap semiempirical (XTB2) gas-phase Opt of a single water molecule, for
+#   comparison with the r2SCAN-3c gas-phase result and/or as a quick reference
+#   alongside the Apixaban gas-phase XTB2 Opt
+#   (Apixaban/Gas/XTB2/ApixabanGasXTB2Opt.inp).
+#
+# Starting geometry: simple standard water geometry (same starting guess used
+#   for Calculations/water/water.inp, the earlier B3LYP/def2-SVP water Opt).
+
+! XTB2 Opt
+
+* xyz 0 1
+O   0.0   0.0   0.1
+H   0.0   0.7  -0.4
+H   0.0  -0.7  -0.4
+*

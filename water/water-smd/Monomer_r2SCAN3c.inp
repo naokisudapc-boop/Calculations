@@ -1,0 +1,17 @@
+# Water monomer in SMD(water), r2SCAN-3c
+# Purpose: SMD(water) Opt + Freq + KeepDens at r2SCAN-3c, to match the level
+#   used for the water tetramer (water-smd/4Water/..._restart) and for the
+#   MeOH monomer (MeOH/Monomer.inp), so a like-for-like comparison of
+#   interaction/stabilization energies is possible.
+#
+# NOTE: the existing water-smd/water_smd.inp is at a different level
+#   (B3LYP/def2-SVP/D3BJ, SMD(water)) - this new calculation is the
+#   r2SCAN-3c counterpart needed for consistency with the tetramer.
+
+! r2SCAN-3c TightSCF Opt Freq KeepDens SMD(water)
+
+* xyz 0 1
+O   0.0   0.0   0.1
+H   0.0   0.7  -0.4
+H   0.0  -0.7  -0.4
+*

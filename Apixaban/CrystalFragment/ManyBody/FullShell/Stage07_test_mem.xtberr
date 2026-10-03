@@ -1,0 +1,17 @@
+forrtl: severe (170): Program Exception - stack overflow
+Image              PC                Routine            Line        Source             
+xtb.exe            00007FF6CD7C3007  Unknown               Unknown  Unknown
+xtb.exe            00007FF6CBBCE1ED  XTB_COULOMB_KLOPM         508  klopmanohno.f90
+libiomp5md.dll     00007FFED7D7EEC3  Unknown               Unknown  Unknown
+libiomp5md.dll     00007FFED7CC82FA  Unknown               Unknown  Unknown
+libiomp5md.dll     00007FFED7C822F4  Unknown               Unknown  Unknown
+xtb.exe            00007FF6CBBCDFAC  XTB_COULOMB_KLOPM         508  klopmanohno.f90
+xtb.exe            00007FF6CBBCD10F  XTB_COULOMB_KLOPM         460  klopmanohno.f90
+xtb.exe            00007FF6CB75C74F  XTB_SCF_mp_SCF.V          798  scf_module.F90
+xtb.exe            00007FF6CB2562F5  XTB_XTB_CALCULATO         258  calculator.f90
+xtb.exe            00007FF6CAF4B9C3  XTB_PROG_MAIN_mp_         687  main.F90
+xtb.exe            00007FF6CAF7473F  MAIN__                     57  primary.f90
+xtb.exe            00007FF6CD65CABE  Unknown               Unknown  Unknown
+xtb.exe            00007FF6CD7C3210  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFF6C3BCDF7  Unknown               Unknown  Unknown
+ntdll.dll          00007FFF6D59EE4C  Unknown               Unknown  Unknown

@@ -1,0 +1,22 @@
+{
+ "r2SCAN3c": {
+  "single_point": true,
+  "dimers": {
+   "D1": {
+    "dE_kcal_mol": -15.88,
+    "dE_kJ_mol": -66.44,
+    "dE_eh": -0.02530664981
+   },
+   "D2": {
+    "dE_kcal_mol": -20.12,
+    "dE_kJ_mol": -84.16,
+    "dE_eh": -0.03205581747
+   },
+   "D3": {
+    "dE_kcal_mol": -20.0,
+    "dE_kJ_mol": -83.66,
+    "dE_eh": -0.03186472466
+   }
+  }
+ }
+}

@@ -1,0 +1,15 @@
+# NOTE: XTB2 does not support SMD/CPCM in ORCA - using ALPB (the solvation
+# model native to the XTB family) instead, as established after the DMF
+# XTB2/SMD error (see DMF/XTB2/Monomer_XTB2_SMD.inp for the original error
+# message).
+
+! XTB2 Opt ALPB(acetonitrile)
+
+* xyz 0 1
+N    0.000000    0.000000    1.160000
+C    0.000000    0.000000    0.000000
+C    0.000000    0.000000   -1.460000
+H    1.028000    0.000000   -1.823000
+H   -0.514000    0.890000   -1.823000
+H   -0.514000   -0.890000   -1.823000
+*

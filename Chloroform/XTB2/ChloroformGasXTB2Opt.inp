@@ -1,0 +1,20 @@
+# Chloroform (CHCl3): gas-phase XTB2 geometry optimization
+# Purpose:
+#   Cheap semiempirical (XTB2) gas-phase Opt of a single chloroform molecule,
+#   analogous to the water/DMSO/MeOH gas-phase XTB2 Opts (water/XTB2,
+#   DMSO/XTB2, MeOH/XTB2), for later comparison/reference alongside the
+#   Apixaban SMD(chloroform) work (Apixaban/Chloroform).
+#
+# Starting geometry: idealized tetrahedral CHCl3 geometry (approximate C-H =
+#   1.09 Ang, C-Cl = 1.77 Ang, close to tetrahedral angles) - a rough starting
+#   guess only; XTB2 will relax bond lengths/angles to their true values.
+
+! XTB2 Opt
+
+* xyz 0 1
+C    0.00000   0.00000   0.00000
+H    0.00000   0.00000   1.09000
+Cl   1.66640   0.00000  -0.58880
+Cl  -0.83290   1.44280  -0.58880
+Cl  -0.83290  -1.44280  -0.58880
+*
