@@ -1,0 +1,32 @@
+# This file was created Sun Oct 11 15:39:33 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2025.4-Ubuntu_2025.4_1 (-:
+# 
+# Executable:   /usr/bin/gmx
+# Data prefix:  /usr
+# Working dir:  /home/naoki/apixaban_md/topologies/dmso_gaff2
+# Command line:
+#   gmx energy -f dmso_gmx_sp_precise.edr -o dmso_energy_precise.xvg
+# gmx energy is part of G R O M A C S:
+#
+# S  C  A  M  O  R  G
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Bond"
+@ s1 legend "Angle"
+@ s2 legend "Proper Dih."
+@ s3 legend "LJ-14"
+@ s4 legend "Coulomb-14"
+@ s5 legend "LJ (SR)"
+@ s6 legend "Coulomb (SR)"
+@ s7 legend "Potential"
+    0.000000    2.191365    1.518437    0.401219   -0.372497  -118.976395   -0.340426   25.870724  -89.707565

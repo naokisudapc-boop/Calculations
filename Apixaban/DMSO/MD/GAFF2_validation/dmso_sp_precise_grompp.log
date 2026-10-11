@@ -1,0 +1,47 @@
+              :-) GROMACS - gmx grompp, 2025.4-Ubuntu_2025.4_1 (-:
+
+Executable:   /usr/bin/gmx
+Data prefix:  /usr
+Working dir:  /home/naoki/apixaban_md/topologies/dmso_gaff2
+Command line:
+  gmx grompp -f dmso_sp.mdp -c dmso_gmx_sp_precise.gro -p dmso_gmx.top -o dmso_sp_precise.tpr -maxwarn 0
+
+
+NOTE 1 [file dmso_sp.mdp]:
+  rlist is equal to rvdw and/or rcoulomb: there is no explicit Verlet
+  buffer. The cluster pair list does have a buffering effect, but choosing
+  a larger rlist might be necessary for good energy conservation.
+
+
+NOTE 2 [file dmso_sp.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group rest is 27.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 3 [file dmso_sp.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+There were 3 NOTEs
+
+GROMACS reminds you: "There is no reason for any individual to have a computer in his home." (Ken Olsen, head of Digital Equipment Corp.)
+
+Setting the LD random seed to -1078992899
+
+Generated 10 of the 10 non-bonded parameter combinations
+
+Generated 10 of the 10 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'UNL'
+
+Taking velocities from 'dmso_gmx_sp_precise.gro', all velocities are zero
+Analysing residue names:
+There are:     1      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+This run will generate roughly 0 Mb of data

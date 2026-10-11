@@ -1,0 +1,29 @@
+              :-) GROMACS - gmx mdrun, 2025.4-Ubuntu_2025.4_1 (-:
+
+Executable:   /usr/bin/gmx
+Data prefix:  /usr
+Working dir:  /home/naoki/apixaban_md/topologies/dmso_gaff2
+Command line:
+  gmx mdrun -s dmso_sp_precise.tpr -deffnm dmso_gmx_sp_precise -ntmpi 1 -ntomp 1
+
+Compiled SIMD is SSE4.1, but AVX2_256 might be faster (see log).
+Reading file dmso_sp_precise.tpr, VERSION 2025.4-Ubuntu_2025.4_1 (single precision)
+Can not increase nstlist because an NVE ensemble is used
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+
+NOTE: Thread affinity was not set.
+starting mdrun 'Generic title'
+0 steps,      0.0 ps.
+
+NOTE: 14 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        0.000        0.000       87.2
+                 (ns/day)    (hour/ns)
+Performance:      652.951        0.037
+
+GROMACS reminds you: "There is no reason for any individual to have a computer in his home." (Ken Olsen, head of Digital Equipment Corp.)
+

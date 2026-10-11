@@ -1,0 +1,19 @@
+integrator              = md
+nsteps                  = 0
+continuation            = yes
+constraints             = none
+
+cutoff-scheme           = Verlet
+pbc                     = xyz
+coulombtype             = Cut-off
+rcoulomb                = 4.0
+vdwtype                 = Cut-off
+rvdw                    = 4.0
+vdw-modifier            = None
+DispCorr                = no
+verlet-buffer-tolerance = -1
+rlist                   = 4.0
+
+nstcalcenergy           = 1
+nstenergy               = 1
+nstlog                  = 1

@@ -1,0 +1,18 @@
+Info: acdoctor mode is on: check and diagnose problems in the input file.
+Info: The atom type is set to gaff2; the options available to the -at flag are
+      gaff, gaff2, amber, bcc, abcg2, and sybyl.
+
+-- Check Format for mol2 File --
+   Status: pass
+Info: Finished reading file (dmso_seed.mol2); atoms read (10), bonds read (9).
+Info: Determining atomic numbers from atomic symbols which are case sensitive.
+Running: /home/naoki/conda-envs/ambertools/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+
+Running: /home/naoki/conda-envs/ambertools/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
+
+Running: /home/naoki/conda-envs/ambertools/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /home/naoki/conda-envs/ambertools/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -t bcc -p /home/naoki/conda-envs/ambertools/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
+Running: /home/naoki/conda-envs/ambertools/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+

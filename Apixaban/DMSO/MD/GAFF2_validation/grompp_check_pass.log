@@ -1,0 +1,42 @@
+              :-) GROMACS - gmx grompp, 2025.4-Ubuntu_2025.4_1 (-:
+
+Executable:   /usr/bin/gmx
+Data prefix:  /usr
+Working dir:  /home/naoki/apixaban_md/topologies/dmso_gaff2
+Command line:
+  gmx grompp -f grompp_check.mdp -c dmso_gmx_check.gro -p dmso_gmx.top -o dmso_check.tpr -maxwarn 0
+
+Generating 1-4 interactions: fudge = 0.5
+
+NOTE 1 [file dmso_gmx.top, line 116]:
+  Zero-step energy minimization will alter the coordinates before
+  calculating the energy. If you just want the energy of a single point,
+  try zero-step MD (with unconstrained_start = yes). To do multiple
+  single-point energy evaluations of different configurations of the same
+  topology, use mdrun -rerun.
+
+Number of degrees of freedom in T-Coupling group rest is 27.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 2 [file grompp_check.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+There were 2 NOTEs
+
+GROMACS reminds you: "It is not critical to add the next quote to a patch release" (Paul Bauer)
+
+Setting the LD random seed to 469756667
+
+Generated 10 of the 10 non-bonded parameter combinations
+
+Generated 10 of the 10 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'UNL'
+Analysing residue names:
+There are:     1      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+This run will generate roughly 0 Mb of data
